@@ -1,0 +1,32 @@
+{
+  "name": "devis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/scripts/script.js && node app/root.js ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "log":"node log.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ismailrei/devis.git"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismailrei/devis/issues"
+  },
+  "homepage": "https://github.com/ismailrei/devis",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "colors": "^1.1.2",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.73.0",
+    "searching": "^1.0.4",
+    "unexpected": "^10.15.1"
+  }
+}

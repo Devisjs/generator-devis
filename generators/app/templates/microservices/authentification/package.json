@@ -1,0 +1,31 @@
+{
+  "name": "authentification",
+  "version": "1.0.0",
+  "description": "add put,delete... to wakanda",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/model.js | node lib/auth.js |node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ismailrei/seneca-wakanda.git"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismailrei/seneca-wakanda/issues"
+  },
+  "homepage": "https://github.com/ismailrei/seneca-wakanda#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.73.0",
+    "seneca": "^2.1.0",
+    "seneca-entity": "^1.2.0"
+  }
+}
