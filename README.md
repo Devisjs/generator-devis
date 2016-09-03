@@ -1,3 +1,5 @@
+<img src="http://gdurl.com/PeQp" width="350"/>
+
 # Devis generator
 #
                                _-----_     ╭──────────────────────────╮
@@ -8,7 +10,7 @@
                               /___A___\   /
                                |  ~  |     
                              __'.___.'__   
-                           ´   `  |° ´ Y `
+                           ´   `  |° ´ Y ` 
 
 #
 
@@ -47,7 +49,7 @@ Navigate to a folder you would love to scaffold a new project and run:
 yo devis
 ```
 ### Using the project
-Once installed, you can start creating microservices by using **devis framework**. You can rely on both microservices that already exist in the project: model and authentification.
+Once installed, you can start creating microservices by using **devis framework**. You can rely on both microservices that already exist in the project: model and authentification. 
 
 After, you should add your microservices to the file *root.js*, located in the folder *app*. Fortunately there already a script that will perform this task in your place , you just have to run the command :
 
@@ -81,14 +83,14 @@ devis.add({
   cmd:'play'
 }, function(args, done) {
 
-  done(null, { result: 'play' });
+  done({ result: 'play' });
 });
 devis.add({
   action: 'game',
   cmd:'pause'
 }, function(args, done) {
 
-  done(null, { result: 'pause' });
+  done({ result: 'pause' });
 });
 devis.listen({
   host:'127.0.0.1',
@@ -97,7 +99,7 @@ devis.listen({
 ```
 You should run
 ```bash
-npm run-script log connect port : '3030' , host : "127.0.0.1"
+npm run-script log connect port : '3030' , host : "127.0.0.1" 
 ```
 **Don't forget space between each argument!**
 
