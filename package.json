@@ -18,13 +18,13 @@
   ],
   "dependencies": {
     "yeoman-generator": "^0.23.0",
-    "chalk": "^1.0.0", 
+    "chalk": "^1.0.0",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
     "eslint": "^3.1.1",
-    "eslint-config-xo-space": "^0.14.0" 
+    "eslint-config-xo-space": "^0.14.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
@@ -32,6 +32,6 @@
       "mocha": true
     }
   },
- 
-  "license": "Apache-2.0"
+
+  "license": "MIT"
 }

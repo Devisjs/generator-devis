@@ -1,4 +1,4 @@
-const http = require("http");
+var http = require("http");
 
 
 function Link(...args)
@@ -13,19 +13,19 @@ function GET(...args)
         done=args[2],
         transmission=args[3],
         request=http.get(link,function(response)
-       {   
+       {
             response.on("data", function (chunk) {
                 buffer += chunk;
-                
+
                 switch(toReplace instanceof Array){
                     case true:toReplace.forEach(v=> buffer=buffer.replace(v,""));
                     case false: buffer= buffer.replace(toReplace,"");
                 }
             });
-            
+
             response.on("end", function (err) {
                 transmission.Response=JSON.parse(buffer);
-                done(null,transmission);
+                done(transmission);
                 });
         })
 }

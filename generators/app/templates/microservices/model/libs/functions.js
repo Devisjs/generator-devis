@@ -1,8 +1,8 @@
-const http = require("http");
+var http = require("http");
 function Conditions(conditions)
 {
-        let res="&$filter="+"\"";
-        let cond=conditions,
+        var res="&$filter="+"\"";
+        var cond=conditions,
             check=0;
             Object.keys(cond).forEach(function(key) {
                 if(check!=0)
@@ -19,8 +19,8 @@ function Conditions(conditions)
                     res+=key+"=="+cond[key];
                 }
             });
-            res+="\""; 
-            return res;   
+            res+="\"";
+            return res;
 }
 function Post(options,Data,done,type=null)//add or edit users
 {
@@ -40,7 +40,7 @@ function Post(options,Data,done,type=null)//add or edit users
        [opt_Edit.headers.cookie,opt_Edit.headers['Content-Type'],opt_Edit.withCredentials,options['cookie']]=
                 [options['cookie'],'application/json',true,null] ;
 
-    }      
+    }
     let post_req = http.request(opt_Edit, function(res) {
             res.on('data', function (chunk) {
                     let result="";
@@ -48,17 +48,17 @@ function Post(options,Data,done,type=null)//add or edit users
                         case 'login':
                             result=JSON.stringify(res.headers['set-cookie'][0]).split(";")[0].replace("\"","").split("=");
                             [options['login'],options['link']]=[null,null];
-                            done(null,{Response:JSON.parse(chunk),WASID:result[1]});
+                            done({Response:JSON.parse(chunk),WASID:result[1]});
 
                         case 'group':
                             [options['group'],options['link']]=[null,null];
-                            done(null,JSON.parse(chunk));
-   
+                            done(JSON.parse(chunk));
+
                         default:
                             result=JSON.parse(chunk);
                             result['__ERROR']?(State="ERROR",Response=result['__ERROR'][0]['message']):
-                                          (State="Success",Response=result)        
-                            done(null,{State,Response});
+                                          (State="Success",Response=result)
+                            done({State,Response});
                     }
                 });
             });
@@ -77,19 +77,19 @@ function GET(...args)
         done=args[2],
         transmission=args[3],
         request=http.get(link,function(response)
-       {   
+       {
             response.on("data", function (chunk) {
                 buffer += chunk;
-                
+
                 switch(toReplace instanceof Array){
                     case true:toReplace.forEach(v=> buffer=buffer.replace(v,""));
                     case false: buffer= buffer.replace(toReplace,"");
                 }
             });
-            
+
             response.on("end", function (err) {
                 transmission.Response=JSON.parse(buffer);
-                done(null,transmission);
+                done(transmission);
                 });
         })
 }

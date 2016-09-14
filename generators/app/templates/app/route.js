@@ -1,7 +1,7 @@
-var devis;
-var colors = require("colors/safe");
+let devis;
+let colors = require("colors/safe");
 function DELETE(req, res) {
-    devis.act({ clientId: 1, role: "model", action: "DELETE", ID: req.params.id, table: req.params.table }, function (err, result) {
+    devis.act({ clientId: 1, role: "model", action: "DELETE"}, {ID: req.params.id, table: req.params.table }, function (result) {
         error_test(result);
         //res.render('index.ejs');
     });
@@ -9,10 +9,10 @@ function DELETE(req, res) {
 
 function GET(req, res) {
     req.params.id ? ID = req.params.id : ID = 1000;
-    var cond = { ID };
+    let cond = { ID };
 
-    devis.act({ clientId: 1, role: "model", action: "GET", conditions: cond, table: req.params.table }, function (err, pro) {
-        //res.render('index.ejs', { __STAMP: pro['Response']['__STAMP'], __KEY: pro['Response']['__KEY'], firstName: pro['Response']['firstName'] });
+    devis.act({ clientId: 1, role: "model", action: "GET"}, {conditions: cond, table: req.params.table }, function (pro) {
+        res.render('index.ejs', { __STAMP: pro['Response']['__STAMP'], __KEY: pro['Response']['__KEY'], firstName: pro['Response']['firstName'] });
     });
 }
 
@@ -25,16 +25,15 @@ function POST(req, res) {
 }
 
 function Post_Put(action, req, res) {
-    var Data = { __ENTITIES: [req.body] };//without __KEY and __STAMP!!
+    let Data = { __ENTITIES: [req.body] };//without __KEY and __STAMP!!
     let data=req.body;
     console.log(data);
-    devis.act({ clientId: 1, role: "model", action: action, Add: JSON.stringify(data), table: req.params.table }, function (err, result) {
-        console.log(result);
+    devis.act({ clientId: 1, role: "model", action: action}, {Add: JSON.stringify(data), table: req.params.table }, function (result) {
         error_test(result);
     });
 }
 function error_test(result) {
-    var color, screen;
+    let color, screen;
     result['Response'] == "ERROR" ? (console.log(colors.red(result['Response']))) :
         (console.log(colors.green("Success")));
 }

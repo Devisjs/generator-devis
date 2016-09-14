@@ -1,27 +1,26 @@
-const querystring = require('querystring');
+let querystring = require('querystring');
 http = require("http"),
    	fs = require("fs"),
    	m = require("./libs/functions");
 
-const model = require('../../../devis/devis');
+let model = require('devis');
 
-let options,
-
-    cookie;
+let options, cookie;
 
 model.add({ role: "model", action: "Initialise" }, (args, done) => {
     options = args.options;
-    done(null, { res: options })
+    done("Initialisation complete");
 });
-model.add({ role: "model", action: "PUT" }, (args, done) => {//for update
+
+model.add({ role: "model", action: "PUT" }, (args, done) => {
     args.Add = JSON.parse(args.Add);
     if (args.table) options['link'] = options['path'] + "/" + args.table;
     m.Post(options, args.Add, done);
 });
 
 model.add({ role: "model", action: "GET" }, (args, done) => {//for query(FOR TEST ONLY)
-    let res = "",
-        toReplace = ["[", "]"],
+    let res = "", toReplace = ["[", "]"],
+
         transmission = { Response: "", stric: { result: false } };
 
     if (args.conditions) res = m.Conditions(args.conditions);

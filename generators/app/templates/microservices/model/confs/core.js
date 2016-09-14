@@ -1,6 +1,4 @@
-core=require('seneca')()
+let core=require('devis')
 .use('../main')
-.use('../../transport/main')
-.listen({type:'unix_socket',path:'/tmp/model.sock'});
-core.client({type: 'unix_socket',port: '/tmp/authentification.sock'});
+score.client({type: 'unix_socket',port: '/tmp/authentification.sock'});
 module.exports=core;

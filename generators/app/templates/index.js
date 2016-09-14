@@ -5,7 +5,7 @@ let app = require("express")(),
 
 let bodyParser = require('body-parser'),
     urlencodedParser = bodyParser.urlencoded({ extended: false }),
-    devis = require('../devis/devis'),
+    devis = require('devis'),
     prefix = "/wakandas";
 
 devis.client({ host: '127.0.0.1', port: 3030, id: 1 }).setName("index");
@@ -14,11 +14,11 @@ devis.client({ host: '127.0.0.1', port: 3030, id: 1 }).setName("index");
 func = require("./app/route")({ devis: devis });
 
 //Initialisation of our model
-devis.act({ clientId: 1, role: "model", action: "Initialise", options: data.options[0] }, ()=>{});
+devis.act({ clientId: 1, role: "model", action: "Initialise"}, {options: data.options[0] }, ()=>{});
 
 let login = [data.options[0]['login'], data.options[0]['password']];
 let ID = ["Test"];
-devis.act({ clientId: 1, role: "auth", action: "login", Data: login, options: data.options[0] }, function (err, sessionID) {
+devis.act({ clientId: 1, role: "auth", action: "login"},{Data: login, options: data.options[0] }, function (sessionID) {
     console.log(colors.green(JSON.stringify(sessionID)));
 
 });
@@ -40,5 +40,3 @@ app.listen({
     host: '127.0.0.1',
     protocol: 'http'
 });
-
-
