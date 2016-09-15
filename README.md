@@ -27,7 +27,13 @@ To do so, Yeoman provide a [generator ecosystem](http://yeoman.io/generators/). 
 
 
 ## Usage
-**if you upload the project**
+
+**Installation**
+```bash
+npm install -g yo generator-devis
+```
+
+**Or, if you upload the project**
 
 Install both yeoman and the generator:
 ```bash
