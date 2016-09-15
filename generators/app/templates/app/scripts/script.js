@@ -2,7 +2,7 @@ let fs = require('fs'),
     path = require('path');
 
 function getDirectories(srcpath) {
-	this.req = "devis=require('../../devis/devis');";
+	this.req = "devis=require('devis');";
 
 	fs.readdirSync(srcpath).filter((file) => {
 		if (fs.statSync(path.join(srcpath, file)).isDirectory())
@@ -14,7 +14,7 @@ function getDirectories(srcpath) {
 		for (let cl in obj) {
 			this.req += "\ndevis.client({type: '" + obj[cl].type + "'\,port: '" + obj[cl].port + "'\,host: '" + obj[cl].host + "'\,protocol: '" + obj[cl].protocol + "'});";
 		}
-		//this.req+="\nmodule.exports=devis;";  
+		//this.req+="\nmodule.exports=devis;";
 		this.req += "\ndevis.listen({host:'127.0.0.1',port:3030});";
 		fs.writeFile("app/root.js", req, function (err) {
 			if (err) {
