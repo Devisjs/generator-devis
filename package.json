@@ -13,9 +13,19 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "yo",
+    "devis",
+    "microservice",
+    "micro",
+    "microservices framework",
+    "framework",
+    "yeoman",
     "yeoman-generator"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Devisjs/generator-devis.git"
+  },
   "dependencies": {
     "yeoman-generator": "^0.23.0",
     "chalk": "^1.0.0",
