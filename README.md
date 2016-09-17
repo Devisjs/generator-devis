@@ -58,13 +58,13 @@ yo devis
 
 we will define each part of the generator as a tree
 
-|**.app**<br>
-|-->**.script**<br>
-|---->**.script.js** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**.app**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.script**<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.script.js** 
 * generate local depencies on different microservices and run server you can customise the code if you want for example use different microservice remotely not localy.<br>
 
-|---->You can add other scripts there <br>
-|-->**.root.js** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->You can add other scripts there <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.root.js** 
 * it is here where will be added the different microservices locally or as a client<br>
 |-->**.route.js**
 * This is an optional file that you can delete if you want or take it as example to create your own. it's in this module where will be implemented and evaluated the different functions that you will use in the index file.<br>
@@ -114,8 +114,8 @@ module.exports={
 	    GET:GET
 	}
 ```
-|---->**.confs** <br>
-|------>**.core.js** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.confs** <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------>**.core.js** <br>
 * If you want your Microservice to be used remotly too you should do like the two available microservices by adding the dependencies in the file depencies if you have.<br>
 |**.index**<br>
 * it is here or you'll exploit your different microservices.
