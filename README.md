@@ -63,22 +63,22 @@ we will define each part of the generator as a tree
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.script.js** 
 * generate local depencies on different microservices and run server you can customise the code if you want for example use different microservice remotely not localy.<br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->You can add other scripts there <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->You can add other scripts there <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.root.js** 
-* it is here where will be added the different microservices locally or as a client<br>
+* it is here where will be added the different microservices locally or as a client<br><br>
 |-->**.route.js**
 * This is an optional file that you can delete if you want or take it as example to create your own. it's in this module where will be implemented and evaluated the different functions that you will use in the index file.<br>
-By default this module contains the functions put, get, post and delete to express routing framework, as i said it's just an example.<br>
+By default this module contains the functions put, get, post and delete to express routing framework, as i said it's just an example.<br><br>
 |-->**.wakanda_config**
 * it's here where you will find the necessary configuration to connect wakanda via api rest, you should change the login and password and you can add different data tables to use.
-Of course you can delete this file or take it as example to connect another interface, or database, MongoDB for example by implementing the adequate Microservice.<br>
+Of course you can delete this file or take it as example to connect another interface, or database, MongoDB for example by implementing the adequate Microservice.<br><br>
 |-->**.client.json**
 * If you intended to consume distance microservices you should add here the necessary information For each Microservice and the script that i described previously will handle these microservices by adding them to the root file.<br>
 |**.microservices**<br>
 * You will add there your different microservices<br>
 |-->**.Micro1**<br>
 |---->**.main.js** <br>
-* It's the core of your Microservice where you will define the different properties, but for clarity, you will only define the properties here, the callback functions will be reported elsewhere in the libs folder.<br>
+* It's the core of your Microservice where you will define the different properties, but for clarity, you will only define the properties here, the callback functions will be reported elsewhere in the libs folder.<br><br>
 |---->**.libs** <br>
 * Example: 
 
@@ -116,7 +116,7 @@ module.exports={
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.confs** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------>**.core.js** <br>
-* If you want your Microservice to be used remotly too you should do like the two available microservices by adding the dependencies in the file depencies if you have.<br>
+* If you want your Microservice to be used remotly too you should do like the two available microservices by adding the dependencies in the file depencies if you have.<br><br>
 |**.index**<br>
 * it is here or you'll exploit your different microservices.
 
