@@ -28,6 +28,13 @@ To do so, Yeoman provide a [generator ecosystem](http://yeoman.io/generators/). 
 
 ## Usage
 
+**Remember** that Devis is based on devispattern that is an addon written in c ++. 
+
+It's necessary, before using Devis to install:
+* python v2.7, and make a c ++ compiler like gcc under **unix / linux-gnu** and install more xcode with command line tools if you are under **mac os**
+
+* on **Windows**: Install all the required tools and configurations using Microsoft's windows-build-tools using ```npm install --global --production windows-build-tools``` from an elevated PowerShell or CMD.exe (run as Administrator).
+
 **Installation**
 ```bash
 npm install -g yo generator-devis
