@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/scripts/script.js && node app/root.js ",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node index.js"
     "log":"node log.js"
   },
   "repository": {
@@ -20,7 +20,7 @@
     "body-parser": "^1.15.2",
     "co": "^4.6.0",
     "colors": "^1.1.2",
-    "devis": "^0.1.0",
+    "devis": "^0.2.0",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "fs": "0.0.2",
