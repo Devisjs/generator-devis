@@ -6,6 +6,7 @@
   <br>
 
 </p>
+check out this video to see the demo https://www.youtube.com/watch?v=3-a5ysx0lrI
 # Devis generator
 #
                                _-----_     ╭──────────────────────────╮
