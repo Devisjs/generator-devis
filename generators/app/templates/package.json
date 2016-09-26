@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app/scripts/script.js && node app/root.js ",
-    "test": "node index.js"
+    "test": "node index.js",
     "log":"node log.js"
   },
   "repository": {
