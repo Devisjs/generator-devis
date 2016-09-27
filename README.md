@@ -17,7 +17,7 @@ check out this video to see the demo https://www.youtube.com/watch?v=3-a5ysx0lrI
                               /___A___\   /
                                |  ~  |     
                              __'.___.'__   
-                           ´   `  |° ´ Y ` 
+                           ´   `  |° ´ Y `
 
 #
 
@@ -35,7 +35,7 @@ To do so, Yeoman provide a [generator ecosystem](http://yeoman.io/generators/). 
 
 ## Usage
 
-**Remember** that Devis is based on devispattern that is an addon written in c ++. 
+**Remember** that Devis is based on devispattern that is an addon written in c ++.
 
 It's necessary, before using Devis to install:
 * python v2.7, and make a c ++ compiler like gcc under **unix / linux-gnu** and install more xcode with command line tools if you are under **mac os**
@@ -68,17 +68,17 @@ Navigate to a folder you would love to scaffold a new project and run:
 ```bash
 yo devis
 ```
-### What is Generator-devis? 
+### What is Generator-devis?
 
 we will define each part of the generator as a tree
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**.app**<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.script**<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.script.js** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.script.js**
 * generate local depencies on different microservices and run server you can customise the code if you want for example use different microservice remotely not localy.<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->You can add other scripts there <br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.root.js** 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-->**.root.js**
 * it is here where will be added the different microservices locally or as a client<br><br>
 |-->**.route.js**
 * This is an optional file that you can delete if you want or take it as example to create your own. it's in this module where will be implemented and evaluated the different functions that you will use in the index file.<br>
@@ -94,7 +94,7 @@ Of course you can delete this file or take it as example to connect another inte
 |---->**.main.js** <br>
 * It's the core of your Microservice where you will define the different properties, but for clarity, you will only define the properties here, the callback functions will be reported elsewhere in the libs folder.<br><br>
 |---->**.libs** <br>
-* Example: 
+* Example:
 
 If your Microservice is model called  and contains properties: GET and Post then your main.js will be like that:
 ```js
@@ -113,7 +113,7 @@ model.add({
 }, model_f.POST);
 module.exports = model;
 ```
-And the functions file will be something like that: 
+And the functions file will be something like that:
 ```js
 function POST(args, done) {
    //do something
@@ -135,7 +135,7 @@ module.exports={
 * it is here or you'll exploit your different microservices.
 
 ### Using the project
-Once installed, you can start creating microservices by using **devis framework**. You can rely on both microservices that already exist in the project: model and authentification. 
+Once installed, you can start creating microservices by using **devis framework**. You can rely on both microservices that already exist in the project: model and authentification.
 
 After, you should add your microservices to the file *root.js*, located in the folder *app*. Fortunately there already a script that will perform this task in your place , you just have to run the command :
 
@@ -188,8 +188,15 @@ devis.listen({
 ```
 You should run
 ```bash
-npm run-script log connect port : '3030' , host : "127.0.0.1" 
+npm run-script log connect port : '3030' , host : "127.0.0.1"
 ```
 **Don't forget space between each argument!**
 
 A file will be created under the name **devis-log.txt** or you will find all the information regarding this Microservice.
+
+###Generate microservice scaffold
+If you want to generate a scaffold of Microservice you should run the following command:
+
+```bash
+npm run-script createMicro microservice_name
+```
