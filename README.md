@@ -156,7 +156,9 @@ The script will generate automatically the file *root.js*: use  both microservic
 By running the index file you will consume the server and log in **wakanda**.
 
 ## Use devis command line
-To use Devis command line check this website how to use devis path using export command:http://www.cyberciti.biz/faq/unix-linux-adding-path/ or, simply add it into your **/usr/bin** folder the devis command are in **app** folder.
+To use Devis command line check this website how to use devis path using export command:http://www.cyberciti.biz/faq/unix-linux-adding-path/ or, simply add it into your **/usr/bin** folder.
+
+The devis command are in **app** folder.
 
 ### Log file
 
