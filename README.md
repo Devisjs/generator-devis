@@ -4,9 +4,10 @@
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/v/generator-devis.svg" alt="Version"></a>
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/l/generator-devis.svg" alt="License"></a>
   <br>
-
 </p>
-check out this video to see the demo https://www.youtube.com/watch?v=3-a5ysx0lrI
+
+
+
 # Devis generator
 #
                                _-----_     ╭──────────────────────────╮
@@ -155,13 +156,21 @@ node index.js
 The script will generate automatically the file *root.js*: use  both microservices and launch the server.
 By running the index file you will consume the server and log in **wakanda**.
 
+## Use devis command line
+### If you are using Mac OS or GNU/LINUX:
+To use Devis command line check this website how to use devis path using export command:http://www.cyberciti.biz/faq/unix-linux-adding-path/ or, simply add it into your **/usr/bin** folder.
+
+The devis command are in **app** folder.
+### On windows:
+Just use npm run-script instead of devis for now.
+
 
 ### Log file
 
 If you want to know handles that a Microservice offers, like *model* , you just have to write the following command:
 
 ```bash
-npm run-script log microservices/model/main
+devis log microservices/model/main
 ```
 If this microservice are distant, for example
 ```javascript
@@ -188,7 +197,7 @@ devis.listen({
 ```
 You should run
 ```bash
-npm run-script log connect port : '3030' , host : "127.0.0.1"
+devis log connect port : '3030' , host : "127.0.0.1"
 ```
 **Don't forget space between each argument!**
 
@@ -198,5 +207,49 @@ A file will be created under the name **devis-log.txt** or you will find all the
 If you want to generate a scaffold of Microservice you should run the following command:
 
 ```bash
-npm run-script createMicro microservice_name
+devis createMicro microservice_name
 ```
+
+##Use MongoDB
+If you want use mongodb in your application you have just to write some simple commands:
+For example, you wanna create 2 schemas *users and posts*
+we suppose that the database name is "myapp"
+First you should implement the `data.json :app/database/data.json`:
+```json
+{
+    "user": {
+        "firstname": {
+            "type": "String",
+            "unique": "true",
+            "required": "true"
+        },
+        "lastname": {
+            "type": "String",
+            "unique": true,
+            "required": true
+        },
+        "updated_at": {
+            "type": "Date",
+            "default": "Date.now"
+        }
+    },
+    "poste":{
+      "name":"String",
+      "text":"String",
+      "user_id":"String",
+      "updated_at": {
+          "type": "Date",
+          "default": "Date.now"
+      }
+    }
+}
+```
+After you have to run this commands:
+```bash
+devis db mongo
+devis db myapp user
+devis db myapp poste
+devis db configure
+```
+After that, files ``index.js`` and ``app/route.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `poste` with ``"ejs" files`` to implement for edit, add and index for each schema.
+Implement methods inside app/route.js file and that's it! you have a complete and powerfull application with minimum effort and in minimum time!  
