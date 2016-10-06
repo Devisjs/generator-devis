@@ -1,0 +1,25 @@
+{
+  "name": "model",
+  "version": "1.0.0",
+  "description": "add put,delete... to wakanda",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Devisjs/devis/issues"
+  },
+  "homepage": "https://github.com/Devisjs/devis",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "devis": "^0.1.0",
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.73.0"
+  }
+}

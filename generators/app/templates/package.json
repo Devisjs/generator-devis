@@ -1,35 +1,37 @@
 {
-    "name": "devisProject",
-    "main": "index.js",
-    "scripts": {
-        "start": "node app/scripts/script.js && node app/root.js ",
-        "test": "node index.js",
-        "log": "node log.js",
-        "createMicro": "node app/scripts/createmicro.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+ssh://git@github.com/ismailrei/devis.git"
-    },
-    "author": "ismail reida",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ismailrei/devis/issues"
-    },
-    "homepage": "https://github.com/ismailrei/devis",
-    "dependencies": {
-        "body-parser": "^1.15.2",
-        "co": "^4.6.0",
-        "colors": "^1.1.2",
-        "devis": "^1.0.1",
-        "ejs": "^2.5.1",
-        "express": "^4.14.0",
-        "fs": "0.0.2",
-        "http": "0.0.0",
-        "querystring": "^0.2.0",
-        "request": "^2.73.0",
-        "searching": "^1.0.4",
-        "unexpected": "^10.15.1",
-        "mkpath": "^1.0.0"
-    }
+  "name": "devisProject",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/scripts/script.js && node app/root.js ",
+    "test": "node index.js",
+    "log": "node log.js",
+    "createMicro": "node app/scripts/createmicro.js",
+    "db":"node app/scripts/database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ismailrei/devis.git"
+  },
+  "author": "ismail reida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismailrei/devis/issues"
+  },
+  "homepage": "https://github.com/ismailrei/devis",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "colors": "^1.1.2",
+    "devis": "^1.0.1",
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "mkpath": "^1.0.0",
+    "mongoose": "^4.6.2",
+    "querystring": "^0.2.0",
+    "request": "^2.73.0",
+    "searching": "^1.0.4",
+    "unexpected": "^10.15.1"
+  }
 }
