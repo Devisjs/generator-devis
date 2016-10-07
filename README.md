@@ -161,11 +161,7 @@ By running the index file you will consume the server and log in **wakanda**.
 To use Devis command line check this website how to use devis path using export command:http://www.cyberciti.biz/faq/unix-linux-adding-path/ or, simply add it into your **/usr/bin** folder.
 
 The devis command are in **app** folder.
-<<<<<<< HEAD
 ### On windows:
-=======
-### On windows: 
->>>>>>> 01b5811fd631ce82e01e370301b921b09076bb32
 Just use npm run-script instead of devis for now.
 
 
