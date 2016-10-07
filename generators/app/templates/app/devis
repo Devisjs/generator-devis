@@ -1,0 +1,8 @@
+#!/bin/bash   
+res=""
+space=" "                                                                                                                                                                            
+for arg in "$@"
+do  
+    res=$res$space$arg
+done
+npm run-script $res
