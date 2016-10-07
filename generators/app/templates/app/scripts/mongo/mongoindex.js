@@ -15,13 +15,14 @@ let express = require("express"),
     });
 app.use(express.static("views"));
 app.use(require("body-parser").json());
+app.get(prefix + '/:table/add', func.POST);
 app.get(prefix, (req, res) => {
     res.render('index.ejs');
 });
 app.get(prefix + '/:table/:id', func.GET);
 app.get(prefix + '/:table/', func.GET);
 app.delete(prefix + '/:table/:id', func.DELETE);
-
+app.delete(prefix + '/:table/', func.DELETE);
 app.put(prefix + '/:table', urlencodedParser, func.PUT);
 
 app.post(prefix + '/:table', urlencodedParser, func.POST);

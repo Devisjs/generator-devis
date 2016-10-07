@@ -20,12 +20,11 @@ function createFile(name, writeData) {
     });
 }
 
-function createMongoModel(app, model, data) {
+function createMongoModel(model, data) {
     data = JSON.stringify(data);
     data = data.replace("\"Date\"", "Date");
     data = data.replace("\"Date.now\"", "Date.now");
-    let writeData = "'use strict';\nlet mongoose = require('mongoose');";
-    writeData += "\nmongoose.connect('mongodb://localhost/" + app + "');";
+    let writeData = "'use strict'\nlet mongoose = require('mongoose');";
     writeData += "\nlet Schema = new mongoose.Schema(" + data + ");";
     writeData += "\nmodule.exports = mongoose.model(\"" + model + "\", Schema);";
 
@@ -39,16 +38,16 @@ function createMongoModel(app, model, data) {
 }
 
 
-if (!process.argv[3] && process.argv[2] != "generate") {
+if (!process.argv[3]) {
     mkpath('app/database/' + process.argv[2] + '/models', function(err) {
         if (err) throw err;
     });
 
 } else if (process.argv[2] == "generate") {
     fs.createReadStream('app/scripts/mongo/mongoindex.js').pipe(fs.createWriteStream('index.js'));
-
-    //  fs.createReadStream('app/scripts/mongo/mongoroute.js').pipe(fs.createWriteStream('app/route.js'));
     let req = "'use strict';";
+    req += "\nlet mongoose = require('mongoose');";
+    req += "\nmongoose.connect('mongodb://localhost/" + process.argv[3] + "');";
     fs.readdirSync("app/database/mongo/models").filter((file) => {
         if (!fs.statSync(path.join("app/database/mongo/models", file)).isDirectory())
             req += "\nlet " + path.basename(file, ".js") + " = require('./database/mongo/models/" + file + "');";
@@ -68,7 +67,7 @@ if (!process.argv[3] && process.argv[2] != "generate") {
                     let content = "";
                     content += data;
                     content = JSON.parse(content)[process.argv[3]];
-                    createMongoModel(process.argv[2], process.argv[3], content);
+                    createMongoModel(process.argv[3], content);
                 });
 
             }
