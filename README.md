@@ -10,7 +10,7 @@
 
 
 # Devis generator
-#demos: 
+#demos:
                                _-----_     ╭──────────────────────────╮
                               |       |    │     Welcome to devis     │
                               |--(o)--|    │  microservice framework  │
@@ -248,9 +248,9 @@ First you should implement the `data.json :app/database/data.json`:
 After you have to run this commands:
 ```bash
 devis db mongo
-devis db myapp user
-devis db myapp poste
-devis db configure
+devis db add user
+devis db add poste
+devis db generate myapp
 ```
 After that, files ``index.js`` and ``app/route.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `poste` with ``"ejs" files`` to implement for edit, add and index for each schema.
 Implement methods inside app/route.js file and that's it! you have a complete and powerfull application with minimum effort and in minimum time!  
