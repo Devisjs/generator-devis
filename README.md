@@ -136,6 +136,9 @@ module.exports={
 |**.index**<br>
 * it is here or you'll exploit your different microservices.
 
+* This video will explain how to generate the scaffold: https://www.youtube.com/watch?v=Alw7Azklcvc&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM&index=1
+
+
 ### Using the project
 Once installed, you can start creating microservices by using **devis framework**. You can rely on both microservices that already exist in the project: model and authentification.
 
@@ -211,6 +214,9 @@ If you want to generate a scaffold of Microservice you should run the following 
 devis createMicro microservice_name
 ```
 
+* This video will explain how to use the default wakanda restfull api: https://www.youtube.com/watch?v=qghZtKiTyKw&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM&index=2
+
+
 ##Use MongoDB
 If you want use mongodb in your application you have just to write some simple commands:
 For example, you wanna create 2 schemas *users and posts*
@@ -254,3 +260,5 @@ devis db generate myapp
 ```
 After that, files ``index.js`` and ``app/route.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `poste` with ``"ejs" files`` to implement for edit, add and index for each schema.
 Implement methods inside app/route.js file and that's it! you have a complete and powerfull application with minimum effort and in minimum time!  
+
+* This video will explain how to use mongoDb in your application: https://www.youtube.com/watch?v=p6uOOyJV35o&index=3&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM
