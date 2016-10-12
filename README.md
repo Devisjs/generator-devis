@@ -1,7 +1,7 @@
 # Devis generator
 
 
-<img src="http://gdurl.com/PeQp" width="350"/>
+<img src="https://d13yacurqjgara.cloudfront.net/users/506824/screenshots/1824942/d.gif" width="250"/>
 <p align="center">
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/dt/generator-devis.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/v/generator-devis.svg" alt="Version"></a>
