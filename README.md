@@ -172,13 +172,24 @@ The devis command are in **app** folder.
 As root user, run this command inside your project folder:
 
 ```bash
-sudo mv app/devis /usr/bin
+sudo mv app/devisCommand/GNU_UNIX/devis /usr/bin
 ```
 
 
 ### On windows:
-Just use npm run-script instead of devis for now.
+Setting the path and variables in Windows :
 
+* From the Desktop, right-click the very bottom left corner of the screen to get the Power User Task Menu.
+
+* From the Power User Task Menu, click System.
+
+* Click the Advanced System Settings link in the left column.
+
+* In the System Properties window, click on the Advanced tab, then click the Environment Variables button near the bottom of that tab.
+
+* In the Environment Variables window (pictured below), highlight the Path variable in the "System variables" section and click the Edit button. Add or modify the path lines with the paths you want the computer to access. Each different directory is separated with a semicolon as shown below.
+
+* new and selecte the `app/devisCommand/GNU_UNIX/windows` folder and restart your computer. 
 
 ### Log file
 
