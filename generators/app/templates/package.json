@@ -2,10 +2,11 @@
   "name": "devisProject",
   "main": "index.js",
   "scripts": {
-    "start": "node app/scripts/script.js && node app/root.js ",
+    "start":"node index.js",
+    "generate": "node app/scripts/script.js && node app/root.js ",
     "test": "node index.js",
-    "log": "node log.js",
-    "createMicro": "node app/scripts/createmicro.js",
+    "get": "node log.js",
+    "create": "node app/scripts/createmicro.js",
     "db":"node app/scripts/database.js"
   },
   "repository": {
