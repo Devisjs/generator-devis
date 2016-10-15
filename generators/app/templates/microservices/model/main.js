@@ -1,6 +1,6 @@
 'use strict';
 let querystring = require('querystring');
-http = require("http"),
+let http = require("http"),
    	fs = require("fs"),
    	m = require("./libs/functions");
 
