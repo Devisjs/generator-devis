@@ -189,7 +189,7 @@ Setting the path and variables in Windows :
 
 * In the Environment Variables window (pictured below), highlight the Path variable in the "System variables" section and click the Edit button. Add or modify the path lines with the paths you want the computer to access. Each different directory is separated with a semicolon as shown below.
 
-* new and selecte the `app/devisCommand/GNU_UNIX/windows` folder and restart your computer. 
+* new and select the `app/devisCommand/GNU_UNIX/windows` folder and restart your computer. 
 
 ### Log file
 
