@@ -185,7 +185,7 @@ Just use npm run-script instead of devis for now.
 If you want to know handles that a Microservice offers, like *model* , you just have to write the following command:
 
 ```bash
-devis log microservices/model/main
+devis get microservices/model/main
 ```
 If this microservice are distant, for example
 ```javascript
@@ -212,7 +212,7 @@ devis.listen({
 ```
 You should run
 ```bash
-devis log connect port : '3030' , host : "127.0.0.1"
+devis get connect port : '3030' , host : "127.0.0.1"
 ```
 **Don't forget space between each argument!**
 
@@ -222,7 +222,7 @@ A file will be created under the name **devis-log.txt** or you will find all the
 If you want to generate a scaffold of Microservice you should run the following command:
 
 ```bash
-devis createMicro microservice_name
+devis create microservice_name
 ```
 
 * This video will explain how to use the default wakanda restfull api: https://www.youtube.com/watch?v=qghZtKiTyKw&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM&index=2
