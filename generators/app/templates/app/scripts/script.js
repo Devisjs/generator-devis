@@ -1,9 +1,9 @@
 "use strict";
 let fs = require('fs'),
     path = require('path');
-
+let req="";
 function getDirectories(srcpath) {
-	this.req = "devis=require('devis');";
+	req = "'use strict';\ndevis=require('devis');";
 
 	fs.readdirSync(srcpath).filter((file) => {
 		if (fs.statSync(path.join(srcpath, file)).isDirectory())
@@ -13,10 +13,10 @@ function getDirectories(srcpath) {
 	fs.readFile('app/client.json', 'utf8', (err, data) => {
 		obj = JSON.parse(data);
 		for (let cl in obj) {
-			this.req += "\ndevis.client({type: '" + obj[cl].type + "'\,port: '" + obj[cl].port + "'\,host: '" + obj[cl].host + "'\,protocol: '" + obj[cl].protocol + "'});";
+			req += "\ndevis.client({type: '" + obj[cl].type + "'\,port: '" + obj[cl].port + "'\,host: '" + obj[cl].host + "'\,protocol: '" + obj[cl].protocol + "'});";
 		}
 		//this.req+="\nmodule.exports=devis;";
-		this.req += "\ndevis.listen({host:'127.0.0.1',port:3030});";
+		req += "\ndevis.listen({host:'127.0.0.1',port:3030});";
 		fs.writeFile("app/root.js", req, function (err) {
 			if (err) {
 				return console.log(err);

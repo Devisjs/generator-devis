@@ -1,3 +1,4 @@
+'use strict';
 let core=require('devis')
 .use('../main')
 .listen({type:'unix_socket',path:'/tmp/authentification.sock'});

@@ -1,4 +1,4 @@
-
+'use strict';
 let devis;
 let colors = require("colors/safe");
 

@@ -1,3 +1,4 @@
+'use strict';
 let querystring = require('querystring');
 http = require("http"),
    	fs = require("fs"),

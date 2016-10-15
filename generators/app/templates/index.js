@@ -1,3 +1,4 @@
+'use strict';
 //Define variables
 let app = require("express")(),
     colors = require("colors/safe"),

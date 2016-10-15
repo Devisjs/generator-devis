@@ -1,3 +1,4 @@
+'use strict';
 let devis;
 let colors = require("colors/safe");
 function DELETE(req, res) {
