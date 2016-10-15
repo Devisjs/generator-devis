@@ -136,8 +136,8 @@ module.exports={
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|---->**.confs** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|------>**.core.js** <br>
-* <p style='color:red'>If you want your Microservice to be used remotly too you should do like the two available microservices by adding the dependencies in the file depencies if you have.<br><br>
-|**.index**<br></p>
+* If you want your Microservice to be used remotly too you should do like the two available microservices by adding the dependencies in the file depencies if you have.<br><br>
+|**.index**<br>
 * it is here or you'll exploit your different microservices.
 
 * This video will explain how to generate the scaffold: https://www.youtube.com/watch?v=Alw7Azklcvc&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM&index=1
