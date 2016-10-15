@@ -150,15 +150,15 @@ After, you should add your microservices to the file *root.js*, located in the f
 
 ```bash
 npm install
-npm start
+devis generate
 ```
 
 If you just wanna test both existing microservices, you should install [ wakanda ] ( https://wakanda.github.io ), add one or more tables , a use, change login and password on ```app/wakanda_config.js``` and launch
 
 ```bash
 npm install
-npm start
-node index.js
+devis generate
+devis start
 ```
 
 The script will generate automatically the file *root.js*: use  both microservices and launch the server.
@@ -166,9 +166,16 @@ By running the index file you will consume the server and log in **wakanda**.
 
 ## Use devis command line
 ### If you are using Mac OS or GNU/LINUX:
-To use Devis command line check this website how to use devis path using export command:http://www.cyberciti.biz/faq/unix-linux-adding-path/ or, simply add it into your **/usr/bin** folder.
 
 The devis command are in **app** folder.
+
+As root user, run this command inside your project folder:
+
+```bash
+sudo mv app/devis /usr/bin
+```
+
+
 ### On windows:
 Just use npm run-script instead of devis for now.
 
