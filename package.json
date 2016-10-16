@@ -1,12 +1,12 @@
 {
   "name": "generator-devis",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "",
   "homepage": "",
   "author": {
     "name": "ismailrei",
     "email": "ismailrei@gmail.com",
-    "url": ""
+    "url": "https://github.com/Devisjs/generator-devis"
   },
   "files": [
     "generators"
@@ -27,7 +27,7 @@
     "url": "https://github.com/Devisjs/generator-devis.git"
   },
   "dependencies": {
-    "yeoman-generator": "^0.23.0",
+    "yeoman-generator": "^0.24.1",
     "chalk": "^1.0.0",
     "yosay": "^1.0.0"
   },
