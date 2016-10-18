@@ -7,6 +7,8 @@
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/dt/generator-devis.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/v/generator-devis.svg" alt="Version"></a>
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/l/generator-devis.svg" alt="License"></a>
+  
+  <a href="https://www.bithound.io/github/Devisjs/generator-devis"><img src="https://www.bithound.io/github/Devisjs/generator-devis/badges/score.svg" alt="License"></a>
   <br>
   Check this playlist to see generator demos: https://www.youtube.com/playlist?list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM
 </p>
