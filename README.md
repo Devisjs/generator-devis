@@ -209,14 +209,14 @@ devis.add({
   cmd:'play'
 }, function(args, done) {
 
-  done({ result: 'play' });
+  done(null,{ result: 'play' });
 });
 devis.add({
   action: 'game',
   cmd:'pause'
 }, function(args, done) {
 
-  done({ result: 'pause' });
+  done(null,{ result: 'pause' });
 });
 devis.listen({
   host:'127.0.0.1',
