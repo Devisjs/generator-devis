@@ -1,32 +1,22 @@
 'use strict';
 
 function insert(args, done) {
-    let res;
     let newData = new(eval(args['Schema']))(args.data);
     newData.save(function(err) {
-        if (err)
-            res = err;
-        else
-            res = newData;
-        done(res);
+        done(err, newData);
     });
 }
 
 function find(args, done) {
-    let res;
     args['Schema'].find(args.conditions, (err, result) => {
-        if (err) res = err;
-        else res = result;
-        done(res);
+        res = result;
+        done(err, result);
     });
 }
 
 function update(args, done) {
-    let res;
     let callback = (err, result) => {
-        if (err) res = err;
-        else res = result;
-        done(res);
+        done(err, result);
     };
     // Model.update(conditions, update, [options], [callback])
     // update `multi`ple tasks from complete false to true
@@ -45,11 +35,8 @@ function update(args, done) {
 }
 
 function delet(args, done) {
-    let res;
     let callback = (err, result) => {
-        if (err) res = err;
-        else res = result;
-        done(res);
+        done(err, result);
     };
     // Model.update(conditions, update, [options], [callback])
     // update `multi`ple tasks from complete false to true
@@ -57,14 +44,14 @@ function delet(args, done) {
     //Model.findOneAndUpdate([conditions], [update], [options], [callback])
     if (!args.options) args.options = {};
     if (args.multi === true)
-        args['Schema'].remove(args.conditions,callback);
+        args['Schema'].remove(args.conditions, callback);
 
 
     else
     if (args.id)
         args['Schema'].findByIdAndRemove(id, args.options, callback);
     else
-        args['Schema'].findOneAndRemove(args.conditions,args.options, callback);
+        args['Schema'].findOneAndRemove(args.conditions, args.options, callback);
 }
 module.exports = {
     insert: insert,

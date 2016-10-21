@@ -7,7 +7,7 @@ var colors = require("colors/safe");
 if (process.argv[2])
     name = process.argv[2];
 
-var main = "let " + name[0] + "= require('./libs/functions');\nlet " + name + "=require('devis');\nmodule.exports =" + name + ";";
+var main = "'use strict';\nlet " + name[0] + "= require('./libs/functions');\nlet " + name + "=require('devis');\nmodule.exports =" + name + ";";
 mkpath('microservices/'+name + '/confs', function(err) {
     if (err) throw err;
     fs.writeFile('microservices/'+name + "/confs/core.js", "", function(err) {

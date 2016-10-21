@@ -15,11 +15,12 @@ devis.client({ host: '127.0.0.1', port: 3030, id: 1 }).setName("index");
 func = require("./app/route")({ devis: devis });
 
 //Initialisation of our model
-devis.act({ clientId: 1, role: "model", action: "Initialise"}, {options: data.options[0] }, ()=>{});
+devis.act({ clientId: 1, role: "model", action: "Initialise"}, {options: data.options[0] },(err, result) => {});
 
 let login = [data.options[0]['login'], data.options[0]['password']];
 let ID = ["Test"];
-devis.act({ clientId: 1, role: "auth", action: "login"},{Data: login, options: data.options[0] }, function (sessionID) {
+devis.act({ clientId: 1, role: "auth", action: "login"},{Data: login, options: data.options[0] }, function(err, sessionID) {
+    if (err) throw err;
     console.log(colors.green(JSON.stringify(sessionID)));
 
 });

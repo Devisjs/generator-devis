@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 let querystring = require('querystring');
-let http = require("http"),
+http = require("http"),
    	fs = require("fs"),
    	m = require("./libs/functions");
 
@@ -10,7 +10,7 @@ let options, cookie;
 
 model.add({ role: "model", action: "Initialise" }, (args, done) => {
     options = args.options;
-    done("Initialisation complete");
+    done(null,"Initialisation complete");
 });
 
 model.add({ role: "model", action: "PUT" }, (args, done) => {

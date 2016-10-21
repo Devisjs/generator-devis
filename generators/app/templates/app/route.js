@@ -2,8 +2,8 @@
 let devis;
 let colors = require("colors/safe");
 function DELETE(req, res) {
-    devis.act({ clientId: 1, role: "model", action: "DELETE"}, {ID: req.params.id, table: req.params.table }, function (result) {
-        error_test(result);
+    devis.act({ clientId: 1, role: "model", action: "DELETE" }, { ID: req.params.id, table: req.params.table }, function (err, result) {
+        error_test(err, result);
         //res.render('index.ejs');
     });
 }
@@ -12,7 +12,7 @@ function GET(req, res) {
     req.params.id ? ID = req.params.id : ID = 1000;
     let cond = { ID };
 
-    devis.act({ clientId: 1, role: "model", action: "GET"}, {conditions: cond, table: req.params.table }, function (pro) {
+    devis.act({ clientId: 1, role: "model", action: "GET" }, { conditions: cond, table: req.params.table }, function (pro) {
         res.render('index.ejs', { __STAMP: pro['Response']['__STAMP'], __KEY: pro['Response']['__KEY'], firstName: pro['Response']['firstName'] });
     });
 }
@@ -27,13 +27,13 @@ function POST(req, res) {
 
 function Post_Put(action, req, res) {
     let Data = { __ENTITIES: [req.body] };//without __KEY and __STAMP!!
-    let data=req.body;
+    let data = req.body;
     console.log(data);
-    devis.act({ clientId: 1, role: "model", action: action}, {Add: JSON.stringify(data), table: req.params.table }, function (result) {
-        error_test(result);
+    devis.act({ clientId: 1, role: "model", action: action }, { Add: JSON.stringify(data), table: req.params.table }, function (err, result) {
+        error_test(err, result);
     });
 }
-function error_test(result) {
+function error_test(err, result) {
     let color, screen;
     result['Response'] == "ERROR" ? (console.log(colors.red(result['Response']))) :
         (console.log(colors.green("Success")));

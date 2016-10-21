@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 var http = require("http");
 function Conditions(conditions)
 {
@@ -49,17 +49,17 @@ function Post(options,Data,done,type=null)//add or edit users
                         case 'login':
                             result=JSON.stringify(res.headers['set-cookie'][0]).split(";")[0].replace("\"","").split("=");
                             [options['login'],options['link']]=[null,null];
-                            done({Response:JSON.parse(chunk),WASID:result[1]});
+                            done(null,{Response:JSON.parse(chunk),WASID:result[1]});
 
                         case 'group':
                             [options['group'],options['link']]=[null,null];
-                            done(JSON.parse(chunk));
+                            done(null,JSON.parse(chunk));
 
                         default:
                             result=JSON.parse(chunk);
                             result['__ERROR']?(State="ERROR",Response=result['__ERROR'][0]['message']):
                                           (State="Success",Response=result)
-                            done({State,Response});
+                            done(null,{State,Response});
                     }
                 });
             });
@@ -90,7 +90,7 @@ function GET(...args)
 
             response.on("end", function (err) {
                 transmission.Response=JSON.parse(buffer);
-                done(transmission);
+                done(null,transmission);
                 });
         })
 }
