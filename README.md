@@ -125,11 +125,11 @@ And the functions file will be something like that:
 ```js
 function POST(args, done) {
    //do something
-        done(finalresult);
+        done(null,finalresult);
     }
 function GET(args, done) {
    //do something
-        done(finalresult);
+        done(null,finalresult);
     }
 module.exports={
 	    POST:POST,
