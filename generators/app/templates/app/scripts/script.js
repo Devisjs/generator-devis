@@ -11,7 +11,7 @@ function getDirectories(srcpath) {
 	});
 
 	fs.readFile('app/client.json', 'utf8', (err, data) => {
-		obj = JSON.parse(data);
+		let obj = JSON.parse(data);
 		for (let cl in obj) {
 			req += "\ndevis.client({type: '" + obj[cl].type + "'\,port: '" + obj[cl].port + "'\,host: '" + obj[cl].host + "'\,protocol: '" + obj[cl].protocol + "'});";
 		}
