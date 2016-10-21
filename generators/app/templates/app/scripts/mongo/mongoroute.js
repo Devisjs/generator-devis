@@ -9,7 +9,8 @@ function DELETE(req, res) {
     }, {
         conditions: req.body,
         Schema: eval(req.params.table)
-    }, function(result) {
+    }, function(err,result) {
+        if(err)throw err;
         console.log(result);
         //res.render('index.ejs');
     });
@@ -25,6 +26,7 @@ function GET(req, res) {
         conditions:ID,
         Schema: eval(req.params.table)
     }, function(pro) {
+        if(err)throw err;
         console.log(pro);
         //res.render('index.ejs', {add data there });
     });
@@ -38,7 +40,8 @@ function PUT(req, res) {
         Schema: eval(req.params.table),
         conditions: req.params.id,
         update: req.body
-    }, (res) => {
+    }, (err,res) => {
+        if(err)throw err;
         console.log(res);
     });
 }
@@ -50,7 +53,8 @@ function POST(req, res) {
     }, {
         Schema: eval(req.params.table),
         data: req.body
-    }, (res) => {
+    }, (err,res) => {
+        if(err)throw err;
         console.log(res);
     });
 }
