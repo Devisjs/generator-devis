@@ -3,7 +3,7 @@ let fs = require('fs'),
     path = require('path');
 let req="";
 function getDirectories(srcpath) {
-	req = "'use strict';\ndevis=require('devis');";
+	req = "'use strict';\nlet devis=require('devis');";
 
 	fs.readdirSync(srcpath).filter((file) => {
 		if (fs.statSync(path.join(srcpath, file)).isDirectory())
