@@ -9,7 +9,7 @@ function insert(args, done) {
 
 function find(args, done) {
     args['Schema'].find(args.conditions, (err, result) => {
-        res = result;
+
         done(err, result);
     });
 }

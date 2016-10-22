@@ -10,15 +10,15 @@ function DELETE(req, res) {
         conditions: req.body,
         Schema: eval(req.params.table)
     }, function(err,result) {
-        if(err)throw err;
+        if(err) console.log(err);
         console.log(result);
         //res.render('index.ejs');
     });
 }
 
 function GET(req, res) {
+    let ID={};
     if (req.params.id) ID={_id:req.params.id};
-      else ID={};
     devis.act({
         role: "mongo",
         action: "find"
@@ -26,7 +26,7 @@ function GET(req, res) {
         conditions:ID,
         Schema: eval(req.params.table)
     }, function(pro) {
-        if(err)throw err;
+        if(err) console.log(err);
         console.log(pro);
         //res.render('index.ejs', {add data there });
     });
@@ -41,7 +41,7 @@ function PUT(req, res) {
         conditions: req.params.id,
         update: req.body
     }, (err,res) => {
-        if(err)throw err;
+        if(err) console.log(err);
         console.log(res);
     });
 }
@@ -54,7 +54,7 @@ function POST(req, res) {
         Schema: eval(req.params.table),
         data: req.body
     }, (err,res) => {
-        if(err)throw err;
+        if(err) console.log(err);
         console.log(res);
     });
 }
