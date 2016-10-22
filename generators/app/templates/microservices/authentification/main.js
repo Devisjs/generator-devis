@@ -1,12 +1,12 @@
 "use strict";
 let querystring = require('querystring');
 
-http = require("http"),
+let http = require("http"),
    	fs = require("fs"),
    	a = require("./libs/functions");
 
 let authentification = require('devis');
-let options, buffer;
+let options={}, buffer={};
 
 authentification.add({ role: "auth", action: "login" }, (args, done) => {
     options = args.options;

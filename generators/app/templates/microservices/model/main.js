@@ -1,12 +1,12 @@
 "use strict";
 let querystring = require('querystring');
-http = require("http"),
+let http = require("http"),
    	fs = require("fs"),
    	m = require("./libs/functions");
 
 let model = require('devis');
 
-let options, cookie;
+let options={}, cookie={};
 
 model.add({ role: "model", action: "Initialise" }, (args, done) => {
     options = args.options;
