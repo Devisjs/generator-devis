@@ -239,9 +239,12 @@ devis create microservice_name
 * This video will explain how to use the default wakanda restfull api: https://www.youtube.com/watch?v=qghZtKiTyKw&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM&index=2
 
 
-##Use MongoDB
-If you want use mongodb in your application you have just to write some simple commands:
-For example, you wanna create 2 schemas *users and posts*
+##Use MongoDB and Angular
+If you want use mongodb and angular in your application you have just to write some simple commands:
+For example, you wanna create an application who will manage user posts. 
+
+So you need 2 schemas *users and posts*
+
 we suppose that the database name is "myapp"
 First you should implement the `data.json :app/database/data.json`:
 ```json
@@ -262,7 +265,7 @@ First you should implement the `data.json :app/database/data.json`:
             "default": "Date.now"
         }
     },
-    "poste":{
+    "post":{
       "name":"String",
       "text":"String",
       "user_id":"String",
@@ -280,7 +283,12 @@ devis db add user
 devis db add poste
 devis db generate myapp
 ```
-After that, files ``index.js`` and ``app/route.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `poste` with ``"ejs" files`` to implement for edit, add and index for each schema.
-Implement methods inside app/route.js file and that's it! you have a complete and powerfull application with minimum effort and in minimum time!  
+``devis db mongo`` will add mongo folder to database and  ``devis add user`` will generate the user data file on mongo folder and add user route file to the route folder and generate user folder on public with index.html and finaly add user angular controller to controllers folder under public folder.
+
+After that, files ``index.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `post` with ``"html" files`` to implement for edit, add and index for each schema.
+Implement route methods inside `app/route/user.js` and `app/route/post.js` and angular methods inside `public/controllers/user.js` and `public/controllers/post.js`, after implementing the necessary microservices for User and post.
+And that's it! you have a complete and powerfull application with minimum effort in minimum time!  
+
+* You can see the lirary example in generator-devis example for more information
 
 * This video will explain how to use mongoDb in your application: https://www.youtube.com/watch?v=p6uOOyJV35o&index=3&list=PLXuIV4C_5YhI8dX2kFx8h414byI1_yAxM
