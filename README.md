@@ -285,7 +285,7 @@ devis db generate myapp
 ```
 ``devis db mongo`` will add mongo folder to database and  ``devis add user`` will generate the user data file on mongo folder and add user route file to the route folder and generate user folder on public with index.html and finaly add user angular controller to controllers folder under public folder.
 
-After that, files ``index.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `post` with ``"html" files`` to implement for edit, add and index for each schema.
+After that,``index.js`` will be implemented by using mongodb micorservice and user,poste schema. Inside views folder you will see 2 folders `user` and `post` with ``"html" files`` to implement for edit, add and index for each schema.
 Implement route methods inside `app/route/user.js` and `app/route/post.js` and angular methods inside `public/controllers/user.js` and `public/controllers/post.js`, after implementing the necessary microservices for User and post.
 And that's it! you have a complete and powerfull application with minimum effort in minimum time!  
 
