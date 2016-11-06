@@ -3,16 +3,13 @@
 var fs = require('fs');
 var name = "microservice";
 
-function htmlGenerate(){
-    
-}
 
 function generateFunction(name) {
     return "function " + name + " (req, res) {\n};\n";
 }
 
 function createFile(name, writeData) {
-    fs.writeFile(name, writeData, function(err) {
+    fs.writeFile(name, writeData, function (err) {
         if (err) throw err;
     });
 }
@@ -25,10 +22,31 @@ function generateRoute(model) {
     Route += generateFunction("Delete");
     Route += "module.exports = function route(r) {\n        devis = r.devis;\n        return {\n            GET: GET,\n            POST: POST,\n            PUT: PUT,\n            DELETE: DELETE\n   } }";
     createFile('app/route/' + model + '.js', Route);
+
+}
+function generateDataTag(Tag, data) {
+    let result = "";
+    for (let k in data) {
+        if (k != "updated_at")
+            result += Tag.replace('tag', k) + "\n";
+    }
+    return result;
 }
 
+function htmlIndexGenerate(model, dataModel) {
+    fs.readFile("app/scripts/jsFiles/index.html", function (err, data) {
+        if (err) throw err;
+        let Str = "";
+        Str += data;
+        Str = Str.replace(/model/gi, model)
+            .replace('<th>tag</th>', generateDataTag('<th>tag</th>', dataModel))
+            .replace('<td><input class="form-control" ng-' + model + '="' + model + '.tag" /></td>', generateDataTag('<td><input class="form-control" ng-model="' + model + '.tag" /></td>', dataModel))
+            .replace('<td>{{' + model + '.tag}}</td>', generateDataTag('<td>{{' + model + '.tag}}</td>', dataModel))
+        createFile('public/' + model + '/index.html', Str);
+    });
+}
 function generateController(model) {
-    fs.readFile("app/scripts/jsFiles/angular.js", function(err, data) {
+    fs.readFile("app/scripts/jsFiles/angular.js", function (err, data) {
         if (err) throw err;
         let Str = "";
         Str += data;
@@ -37,7 +55,7 @@ function generateController(model) {
     });
 }
 module.exports = {
+    htmlIndexGenerate: htmlIndexGenerate,
     generateController: generateController,
     generateRoute: generateRoute
-
 }

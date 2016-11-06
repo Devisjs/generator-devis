@@ -22,20 +22,20 @@ function createFile(name, writeData) {
 
 function createModel(model, data) {
     try {
-        data = JSON.stringify(data);
-        data = data.replace("\"Date\"", "Date").replace("\"Date.now\"", "Date.now");
-
-        let writeData = "'use strict'\nlet mongoose = require('mongoose');";
-        writeData += "\nlet Schema = new mongoose.Schema(" + data + ");";
-        writeData += "\nmodule.exports = mongoose.model(\"" + model + "\", Schema);";
-
-        createFile('app/database/mongo/models/' + model + '.js', writeData);
         mkpath('public/' + process.argv[3], function (err) {
             if (err) throw err;
-            createFile('public/' + process.argv[3] + '/index.html', "");
+           // createFile('public/' + process.argv[3] + '/index.html', "");
+            generate.htmlIndexGenerate(model,data);
             generate.generateController(process.argv[3]);
             generate.generateRoute(process.argv[3]);
         });
+        let Mongodata = JSON.stringify(data);
+        Mongodata = Mongodata.replace("\"Date\"", "Date").replace("\"Date.now\"", "Date.now");
+
+        let writeData = "'use strict'\nlet mongoose = require('mongoose');";
+        writeData += "\nlet Schema = new mongoose.Schema(" + Mongodata + ");";
+        writeData += "\nmodule.exports = mongoose.model(\"" + model + "\", Schema);";
+        createFile('app/database/mongo/models/' + model + '.js', writeData);
     }
     catch (e) {
         console.log(e);
