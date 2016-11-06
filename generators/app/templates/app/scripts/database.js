@@ -22,8 +22,8 @@ function createFile(name, writeData) {
 
 function createMongoModel(model, data) {
     data = JSON.stringify(data);
-    data = data.replace("\"Date\"", "Date");
-    data = data.replace("\"Date.now\"", "Date.now");
+    data = data.replace("\"Date\"", "Date").replace("\"Date.now\"", "Date.now");
+
     let writeData = "'use strict'\nlet mongoose = require('mongoose');";
     writeData += "\nlet Schema = new mongoose.Schema(" + data + ");";
     writeData += "\nmodule.exports = mongoose.model(\"" + model + "\", Schema);";
@@ -44,18 +44,18 @@ if (!process.argv[3]) {
     });
 
 } else if (process.argv[2] == "generate") {
-  let req = "'use strict';";
-    let data="let data=[";
+    let req = "'use strict';";
+    let data = [];
     fs.readdirSync("app/route").filter((file) => {
         if (!fs.statSync(path.join("app/route", file)).isDirectory())
         {
           req += "\nlet " + path.basename(file, ".js") + " = require('./app/route/" + file + "')({devis: devis})\n";
-          data+="'"+file+"',";
+          data.push(path.basename(file, ".js"));
         }
 
     });
-    data+="]\n";
-    req+=data;
+    req += "const data="+JSON.stringify(data)+";\n";
+
     fs.writeFile('index.js', req, "UTF-8", "a+");
     fs.readFile('app/scripts/jsFiles/indexGenerator.js', function read(err, data) {
       let indexData="";
