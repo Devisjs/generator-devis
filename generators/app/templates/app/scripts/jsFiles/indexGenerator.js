@@ -5,17 +5,16 @@ const session = require('express-session'),
     app = express(),
     urlencodedParser = bodyParser.urlencoded({
         extended: false
-    }),
-    prefix = "/myapp";
+    });
 app.use(require("body-parser").json());
 app.use(express.static("public"));
 
 for (let k in data) {
-    app.delete(prefix + '/' + data[k] + '/:id', eval(data[k]).DELETE);
-    app.get(prefix + '/' + data[k] + '/', auth('normal'), eval(data[k]).GET);
-    app.get(prefix + '/' + data[k] + '/:id', auth('normal'), eval(data[k]).GET);
-    app.post(prefix + '/' + data[k] + '/', urlencodedParser, eval(data[k]).POST);
-    app.put(prefix + '/' + data[k], urlencodedParser, eval(data[k]).PUT);
+    app.delete('/' + data[k] + '/:id', eval(data[k]).DELETE);
+    app.get('/' + data[k] + '/', auth('normal'), eval(data[k]).GET);
+    app.get('/' + data[k] + '/:id', auth('normal'), eval(data[k]).GET);
+    app.post('/' + data[k] + '/', urlencodedParser, eval(data[k]).POST);
+    app.put('/' + data[k], urlencodedParser, eval(data[k]).PUT);
 }
 
 app.listen({

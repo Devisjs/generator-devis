@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html ng-app="modelApp">
+
+<head>
+    <title>model List Api</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container" ng-controller="modelCtrl">
+        <h1>model List Api</h1>
+        <table class="table">
+            <thead>
+                <tr class="model">
+                    <th>tag</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input class="form-control" ng-model="model.tag" /></td>
+                    <td><button class="btn btn-primary" ng-click="addmodel()">Add model</button></td>
+                    <td><button class="btn btn-info" ng-click="update()">Update</button><button class="btn btn-info" ng-click="deselect()">Clear</button></td>
+                </tr>
+                <tr ng-repeat="model in models">
+                    <td>{{model.tag}}</td>
+                    <td><button class="btn btn-danger" ng-click="remove(model.tag)">Remove</button></td>
+                    <td><button class="btn btn-warning" ng-click="get(model.tag)">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+    <script src="../controllers/model.js"></script>
+</body>
+
+</html>

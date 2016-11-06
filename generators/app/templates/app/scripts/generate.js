@@ -3,6 +3,9 @@
 var fs = require('fs');
 var name = "microservice";
 
+function htmlGenerate(){
+    
+}
 
 function generateFunction(name) {
     return "function " + name + " (req, res) {\n};\n";
