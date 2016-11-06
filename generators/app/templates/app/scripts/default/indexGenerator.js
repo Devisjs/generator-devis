@@ -11,8 +11,8 @@ app.use(express.static("public"));
 
 for (let k in data) {
     app.delete('/' + data[k] + '/:id', eval(data[k]).DELETE);
-    app.get('/' + data[k] + '/', auth('normal'), eval(data[k]).GET);
-    app.get('/' + data[k] + '/:id', auth('normal'), eval(data[k]).GET);
+    app.get('/' + data[k] + '/',  eval(data[k]).GET);
+    app.get('/' + data[k] + '/:id',  eval(data[k]).GET);
     app.post('/' + data[k] + '/', urlencodedParser, eval(data[k]).POST);
     app.put('/' + data[k], urlencodedParser, eval(data[k]).PUT);
 }
