@@ -49,7 +49,7 @@ if (!process.argv[3] && process.argv[2] != "generate") {
     });
 
 } else if (process.argv[2] == "generate") {
-    let req = "'use strict';\n";
+    let req = "'use strict';\nconst devis=require('devis');\n";
     let data = [];
     fs.readdirSync("app/route").filter((file) => {
         if (!fs.statSync(path.join("app/route", file)).isDirectory()) {
