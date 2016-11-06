@@ -1,7 +1,6 @@
 const session = require('express-session'),
     bodyParser = require('body-parser'),
     devis = require("devis"),
-    data = [],
     express = require("express"),
     app = express(),
     urlencodedParser = bodyParser.urlencoded({
