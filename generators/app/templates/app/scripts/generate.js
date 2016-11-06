@@ -16,10 +16,10 @@ function createFile(name, writeData) {
 
 function generateRoute(model) {
     let Route = "'use strict';\nlet devis;\n";
-    Route += generateFunction("Post");
-    Route += generateFunction("Put");
-    Route += generateFunction("Get");
-    Route += generateFunction("Delete");
+    Route += generateFunction("POST");
+    Route += generateFunction("PUT");
+    Route += generateFunction("GET");
+    Route += generateFunction("DELETE");
     Route += "module.exports = function route(r) {\n        devis = r.devis;\n        return {\n            GET: GET,\n            POST: POST,\n            PUT: PUT,\n            DELETE: DELETE\n   } }";
     createFile('app/route/' + model + '.js', Route);
 

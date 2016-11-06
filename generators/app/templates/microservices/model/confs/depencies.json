@@ -1,6 +1,0 @@
-{
-	"client1":{
-		"type":"unix_socket",
-		"path":"/tmp/authentification.sock"
-	}
-}
