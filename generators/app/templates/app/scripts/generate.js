@@ -1,7 +1,7 @@
 'use strict';
 
 var fs = require('fs');
-var name = "microservice";
+
 
 
 function generateFunction(name) {
@@ -34,7 +34,7 @@ function generateDataTag(Tag, data) {
 }
 
 function htmlIndexGenerate(model, dataModel) {
-    fs.readFile("app/scripts/jsFiles/index.html", function (err, data) {
+    fs.readFile("app/scripts/default/index.html", function (err, data) {
         if (err) throw err;
         let Str = "";
         Str += data;
@@ -46,7 +46,7 @@ function htmlIndexGenerate(model, dataModel) {
     });
 }
 function generateController(model) {
-    fs.readFile("app/scripts/jsFiles/angular.js", function (err, data) {
+    fs.readFile("app/scripts/default/angular.js", function (err, data) {
         if (err) throw err;
         let Str = "";
         Str += data;

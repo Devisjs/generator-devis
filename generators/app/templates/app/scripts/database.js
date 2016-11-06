@@ -61,7 +61,7 @@ if (!process.argv[3] && process.argv[2] != "generate") {
     req += "const data=" + JSON.stringify(data) + ";\n";
 
     fs.writeFile('index.js', req, "UTF-8", "a+");
-    fs.readFile('app/scripts/jsFiles/indexGenerator.js', function read(err, data) {
+    fs.readFile('app/scripts/default/indexGenerator.js', function read(err, data) {
         fs.appendFile('./index.js', data, "UTF-8", "a+");
     });
 
