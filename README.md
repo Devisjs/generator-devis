@@ -2,7 +2,7 @@
 
 
 
-<img src="https://d13yacurqjgara.cloudfront.net/users/506824/screenshots/1824942/d.gif" width="250"/>
+<img src="https://95yexa.dm2302.livefilestore.com/y3mJ3LIHYeILF4yBzweiHmDFcQckSKnJqRnSpyLyRrSJZuT2UJLUKHjDj0NT5G79MIMaQEDXakZvaD1wJ2j4tjeHVDf9Z_Fwgn-6z3Th0c-bB1cBhoY1JeZVt8erxvbgQf3TthILQl30d1obqbkzrULSrL2uqCapoKwVHiVtN2vm-g?width=784&height=791&cropmode=none" width="250"/>
 <p align="center">
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/dt/generator-devis.svg" alt="Downloads"></a>
   <a href="https://www.npmjs.com/package/generator-devis"><img src="https://img.shields.io/npm/v/generator-devis.svg" alt="Version"></a>
