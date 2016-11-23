@@ -49,7 +49,7 @@ To do so, Yeoman provide a [generator ecosystem](http://yeoman.io/generators/). 
 
 
 It's necessary, before using Devis to install:
-- [CMake](http://www.cmake.org/download/)
+- [CMake](http://www.cmake.org/download/)(*.msi version for windows: You must check the addition of the path for all users, And restart your computer after installation)
 - A proper C/C++ compiler toolchain of the given platform
     - **Windows**:
         - [Visual C++ Build Tools](http://landinghub.visualstudio.com/visual-cpp-build-tools)
@@ -57,7 +57,7 @@ It's necessary, before using Devis to install:
     - **Unix/linux-gnu**:
         - Clang or GCC
         - Ninja or Make (Ninja will be picked if both present)
-        - Install more xcode with command line tools if you are under **mac os**
+        - Xcode with command line tools if you are under **mac os**
 **Installation**
 ```bash
 npm install -g yo generator-devis
