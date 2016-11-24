@@ -1,3 +1,4 @@
+/* Copyright (c) 2016 Devis, MIT License */
 "use strict";
 let fs = require('fs'),
     path = require('path');
