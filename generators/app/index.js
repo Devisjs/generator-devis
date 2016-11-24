@@ -1,3 +1,4 @@
+/* Copyright (c) 2016 Devis, MIT License */
 'use strict';
 var os=require('os');
 var yeoman = require('yeoman-generator');
