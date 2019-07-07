@@ -1,8 +1,41 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:lodash:20180130':
     - yeoman-generator > html-wiring > cheerio > lodash:
         patched: '2018-07-08T08:02:41.863Z'
+  SNYK-JS-LODASH-450202:
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - yeoman-generator > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - yeoman-generator > yeoman-environment > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - yeoman-generator > async > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - yeoman-generator > yeoman-environment > inquirer > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - yeoman-generator > yeoman-environment > grouped-queue > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-07T06:33:08.764Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-07T06:33:08.764Z'

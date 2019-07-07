@@ -30,7 +30,7 @@
     "yeoman-generator": "^2.0.5",
     "chalk": "^1.0.0",
     "yosay": "^1.0.0",
-    "snyk": "^1.88.2"
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
@@ -46,7 +46,8 @@
   "license": "MIT",
   "scripts": {
     "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "prepare": "npm run snyk-protect",
+    "prepublish": "npm run snyk-protect"
   },
   "snyk": true
 }
