@@ -30,7 +30,7 @@
     "yeoman-generator": "^2.0.5",
     "chalk": "^1.0.0",
     "yosay": "^1.0.0",
-    "snyk": "^1.88.2"
+    "snyk": "^1.231.0"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
