@@ -27,7 +27,7 @@
     "url": "https://github.com/Devisjs/generator-devis.git"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.5",
+    "yeoman-generator": "^4.11.0",
     "chalk": "^1.0.0",
     "yosay": "^1.0.0",
     "snyk": "^1.88.2"
