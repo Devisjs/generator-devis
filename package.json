@@ -29,7 +29,7 @@
   "dependencies": {
     "yeoman-generator": "^2.0.5",
     "chalk": "^1.0.0",
-    "yosay": "^1.0.0",
+    "yosay": "^2.0.0",
     "snyk": "^1.88.2"
   },
   "devDependencies": {
