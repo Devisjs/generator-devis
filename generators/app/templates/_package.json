@@ -1,0 +1,17 @@
+{
+  "name": "<%= name %>",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start:service": "node services/hello/server.js",
+    "start:gateway": "node gateway.js",
+    "test": "node --test --test-timeout=20000"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "devis": "^3.0.0"<% plugins.forEach((plugin) => { %>,
+    "<%= plugin %>": "<%= pluginVersions[plugin] %>"<% }) %>
+  }
+}

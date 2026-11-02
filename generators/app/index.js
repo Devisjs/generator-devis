@@ -1,43 +1,47 @@
 /* Copyright (c) 2016 Devis, MIT License */
-'use strict';
-var os=require('os');
-var yeoman = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
-var f=require('fs');
-var res="",same="";
-module.exports = yeoman.Base.extend({
+import Generator from "yeoman-generator";
 
-  prompting: function () {
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to devis\n' + chalk.red('microservice framework') + ' generator!'
-    ));
+export const PLUGIN_VERSIONS = {
+    "devis-mongo-client": "^2.0.0",
+    "devis-pub_sub-redis": "^2.0.0",
+    "devis_rabbitmq": "^2.0.0"
+};
 
-    var prompts = [{
-    type: 'input',
-    name: 'name',
-    message: 'OS '+os.platform()+'? Y/n',
-      default: 'Y'
-    }];
-	same=this.appname;
-    return this.prompt(prompts).then(function (props) {
-	  this.props = props;
-      res=props.name;
-       if(res=='n'||res=='N')
-	  {  
-		this.log.error('System error');
-		process.exit(1);
-	}
-    }.bind(this));
-  },
-  
-  writing: function () {
-  	this.directory('.', '.');
-		
-  },
+const TEMPLATES = [
+    "README.md",
+    "gateway.js",
+    "services/hello/index.js",
+    "services/hello/server.js",
+    "test/hello.test.js"
+];
 
-  install: function () {
-    this.installDependencies();
-  }
-});
+export default class extends Generator {
+
+    async prompting() {
+        this.log("Welcome to the devis microservice framework generator!");
+        this.props = await this.prompt([{
+            type: "input",
+            name: "name",
+            message: "Project name",
+            default: this.appname.toLowerCase().replace(/\s+/g, "-")
+        }, {
+            type: "checkbox",
+            name: "plugins",
+            message: "Plugins to add to the hello microservice",
+            choices: Object.keys(PLUGIN_VERSIONS)
+        }]);
+    }
+
+    writing() {
+        const data = {
+            name: this.props.name,
+            plugins: this.props.plugins || [],
+            pluginVersions: PLUGIN_VERSIONS
+        };
+        this.fs.copyTpl(this.templatePath("_package.json"), this.destinationPath("package.json"), data);
+        this.fs.copy(this.templatePath("_gitignore"), this.destinationPath(".gitignore"));
+        TEMPLATES.forEach((file) => {
+            this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), data);
+        });
+    }
+}

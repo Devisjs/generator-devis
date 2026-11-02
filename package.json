@@ -1,8 +1,8 @@
 {
   "name": "generator-devis",
-  "version": "1.3.8",
+  "version": "2.0.0",
   "description": "Scaffold out a devis project",
-  "homepage": "",
+  "homepage": "https://github.com/Devisjs/generator-devis",
   "author": {
     "name": "ismailrei",
     "email": "ismailrei@gmail.com",
@@ -11,7 +11,7 @@
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
     "yo",
     "devis",
@@ -24,29 +24,21 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Devisjs/generator-devis.git"
+    "url": "git+https://github.com/Devisjs/generator-devis.git"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.5",
-    "chalk": "^1.0.0",
-    "yosay": "^1.0.0",
-    "snyk": "^1.88.2"
+    "yeoman-generator": "^10.3.0"
   },
   "devDependencies": {
-    "yeoman-assert": "^2.0.0",
-    "eslint": "^3.1.1",
-    "eslint-config-xo-space": "^0.14.0"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
+    "yeoman-test": "^11.8.2",
+    "yeoman-environment": "^8.5.1"
   },
   "license": "MIT",
   "scripts": {
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "test": "node --test --test-timeout=120000 \"test/*.test.js\""
   },
-  "snyk": true
+  "type": "module",
+  "engines": {
+    "node": "^22.18.0 || >=24.11.0"
+  }
 }
