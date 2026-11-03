@@ -43,9 +43,15 @@ npm run start:gateway
 curl "http://127.0.0.1:8080/hello?name=devis"
 ```
 
+The project uses Devis 4: handlers are `async` functions, the gateway `await`s its calls and answers `502` when the microservice fails or does not answer within 5 seconds, and both processes shut down cleanly on `SIGTERM`.
+
 Add a microservice by copying `services/hello`, changing its patterns and port, and connecting to it from the gateway with `devis.connect`.
 
-## Upgrading from 1.x
+## Upgrading
+
+Since 2.1, generated projects target Devis 4 instead of Devis 3.
+
+### From 1.x
 
 Version 2 generates a much smaller project targeting Devis 3. The Wakanda configuration, the Angular front end, the mongoose model generator and the `devis` shell command are gone: they relied on the Devis 1 API (`devis.client`, `devis.act`), which no longer exists. Use the plugins above for data storage and messaging.
 

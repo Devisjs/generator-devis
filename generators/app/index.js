@@ -2,9 +2,9 @@
 import Generator from "yeoman-generator";
 
 export const PLUGIN_VERSIONS = {
-    "devis-mongo-client": "^2.0.0",
-    "devis-pub_sub-redis": "^2.0.0",
-    "devis_rabbitmq": "^2.0.0"
+    "devis-mongo-client": "^2.0.1",
+    "devis-pub_sub-redis": "^2.0.1",
+    "devis_rabbitmq": "^2.1.0"
 };
 
 const TEMPLATES = [
