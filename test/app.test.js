@@ -11,10 +11,10 @@ function run(answers) {
     return helpers.run(generator).withAnswers(answers).withOptions({ skipInstall: true });
 }
 
-test("generates a gateway and a hello microservice on devis 4", async () => {
+test("generates a gateway and a hello microservice on devis 4.1", async () => {
     const result = await run({ name: "shop", plugins: [] });
     result.assertFile(["package.json", ".gitignore", "README.md", "gateway.js", "services/hello/index.js", "services/hello/server.js", "test/hello.test.js"]);
-    result.assertJsonFileContent("package.json", { name: "shop", dependencies: { devis: "^4.0.0" } });
+    result.assertJsonFileContent("package.json", { name: "shop", dependencies: { devis: "^4.1.0" } });
     result.assertNoFileContent("services/hello/index.js", ".plug(");
 });
 

@@ -43,13 +43,13 @@ npm run start:gateway
 curl "http://127.0.0.1:8080/hello?name=devis"
 ```
 
-The project uses Devis 4: handlers are `async` functions, the gateway `await`s its calls and answers `502` when the microservice fails or does not answer within 5 seconds, and both processes shut down cleanly on `SIGTERM`.
+The project uses Devis 4.1: handlers are `async` functions, the gateway `await`s its calls without naming a connection (Devis routes them to the microservice that announced the pattern), answers `502` when the microservice fails or does not answer within 5 seconds, and reconnects when it restarts. Both processes shut down cleanly on `SIGTERM`.
 
-Add a microservice by copying `services/hello`, changing its patterns and port, and connecting to it from the gateway with `devis.connect`.
+Add a microservice by copying `services/hello`, changing its patterns and port, and connecting to it from the gateway with `devis.connect`: calls to its patterns are routed to it.
 
 ## Upgrading
 
-Since 2.1, generated projects target Devis 4 instead of Devis 3.
+Since 2.1, generated projects target Devis 4 instead of Devis 3; since 2.2, Devis 4.1.
 
 ### From 1.x
 
