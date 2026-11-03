@@ -11,7 +11,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "devis": "^3.0.0"<% plugins.forEach((plugin) => { %>,
+    "devis": "^4.0.0"<% plugins.forEach((plugin) => { %>,
     "<%= plugin %>": "<%= pluginVersions[plugin] %>"<% }) %>
   }
 }

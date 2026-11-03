@@ -11,17 +11,17 @@ function run(answers) {
     return helpers.run(generator).withAnswers(answers).withOptions({ skipInstall: true });
 }
 
-test("generates a gateway and a hello microservice on devis 3", async () => {
+test("generates a gateway and a hello microservice on devis 4", async () => {
     const result = await run({ name: "shop", plugins: [] });
     result.assertFile(["package.json", ".gitignore", "README.md", "gateway.js", "services/hello/index.js", "services/hello/server.js", "test/hello.test.js"]);
-    result.assertJsonFileContent("package.json", { name: "shop", dependencies: { devis: "^3.0.0" } });
+    result.assertJsonFileContent("package.json", { name: "shop", dependencies: { devis: "^4.0.0" } });
     result.assertNoFileContent("services/hello/index.js", ".plug(");
 });
 
 // A selected plugin is useless unless it is both installed and plugged into the service.
 test("selected plugins are added to dependencies and plugged", async () => {
     const result = await run({ name: "shop", plugins: ["devis-mongo-client", "devis_rabbitmq"] });
-    result.assertJsonFileContent("package.json", { dependencies: { "devis-mongo-client": "^2.0.0", "devis_rabbitmq": "^2.0.0" } });
+    result.assertJsonFileContent("package.json", { dependencies: { "devis-mongo-client": "^2.0.1", "devis_rabbitmq": "^2.1.0" } });
     result.assertFileContent("services/hello/index.js", ".plug(\"devis-mongo-client\")");
     result.assertFileContent("services/hello/index.js", ".plug(\"devis_rabbitmq\")");
     result.assertNoFileContent("services/hello/index.js", "devis-pub_sub-redis");
