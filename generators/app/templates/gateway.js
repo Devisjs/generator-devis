@@ -18,7 +18,7 @@ const server = http.createServer(async (req, res) => {
         return;
     }
     try {
-        const message = await devis.call({ clientId: HELLO, role: "hello", cmd: "greet" }, { name: url.searchParams.get("name") });
+        const message = await devis.call({ role: "hello", cmd: "greet" }, { name: url.searchParams.get("name") });
         res.writeHead(200, { "content-type": "application/json" }).end(JSON.stringify({ message }));
     } catch (err) {
         res.writeHead(502).end(err.message);
